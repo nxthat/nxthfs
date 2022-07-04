@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <title>next hat</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header">
+        <div class="banner">
+          <a href="/">
+            <img src="/static/icons/logo.png" alt="logo" width="45", height="45" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <hr class="separator" />
+    <main>
+      <section class="title">
+        <div class="row">
+          <h1>Next Hat file server</h1>
+          <p>Next Hat file server are the official Next Hat file hosted by next hat</p>
+        </div>
+      </section>
+      <section class="files">
+        <div class="row no-padding">
+          <section class="file-table">
+            <div class="file-table-row">
+              <div class="file-icon">
+                <img  src="/static/icons/blank.gif" alt="Icon " width="22" height="22">
+              </div>
+              <a class="file-table-elem" href="?C=N;O=D">Name</a>
+              <a class="file-table-elem" href="?C=M;O=A">Last modified</a>
+              <a class="file-table-elem" href="?C=S;O=A">Size</a>
+            </div>
+            <hr class="separator">
+            {{#files}}
+              <div class="file-table-row">
+                <div class="file-icon">
+
+                  {{#icon}}
+                    <img src="{{icon}}" alt="[DIR]" width="22" height="22">
+                  {{/icon}}
+                  {{^icon}}
+                    {{#isDirectory}}
+                      <img src="/static/icons/folder.png" alt="[DIR]" width="22" height="22">
+                    {{/isDirectory}}
+                    {{#isFile}}
+                      <img src="/static/icons/file.png" alt="[DIR]" width="22" height="22">
+                    {{/isFile}}
+                  {{/icon}}
+                </div>
+                <a class="file-table-elem" href="{{path}}">{{name}}</a>
+                <code class="file-table-elem">{{last_modified}}</code>
+                <p class="file-table-elem">{{size}}</p>
+              </div>
+            {{/files}}
+            <hr>
+          </section>
+        </div>
+      </section>
+    </main>
+    <hr class="separator" />
+    <footer />
+    </body>
+</html>

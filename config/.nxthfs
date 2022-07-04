@@ -1,0 +1,11 @@
+{
+  "host": ":8080",
+  "exposed_directory": "../repo",
+  "file_icons": {
+    ".png": "/static/icons/image.png",
+    ".tar": "/static/icons/archive.png",
+    ".gz": "/static/icons/archive.png",
+    ".html": "/static/icons/html.png",
+    ".deb": "/static/icons/deb.png"
+  }
+}
